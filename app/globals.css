@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Blockly styling */
+.blocklyToolboxDiv {
+  background-color: #fff3e0 !important;
+  border-right: 1px solid #ff8a65 !important;
+}
+
+.blocklyFlyout {
+  background-color: #ffffff !important;
+}
+
+.blocklyMainBackground {
+  stroke: none !important;
+  fill: #ffffff !important;
+}
+
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffcc80;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff8a65;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff7043;
+}
+
+/* Game canvas styling */
+canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Prehistoric theme animations */
+.dino-bounce {
+  animation: dinoBounce 2s ease-in-out infinite;
+}
+
+@keyframes dinoBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.volcanic-glow {
+  animation: volcanicGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes volcanicGlow {
+  from {
+    box-shadow: 0 0 20px rgba(255, 100, 0, 0.5);
+  }
+  to {
+    box-shadow: 0 0 40px rgba(255, 100, 0, 0.8);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .game-container {
+    flex-direction: column;
+  }
+
+  .blockly-panel {
+    height: 40vh;
+  }
+
+  .game-panel {
+    height: 60vh;
+  }
+}
